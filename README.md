@@ -34,7 +34,16 @@ Q15.Ans:- select distinct city from station where left(city,1) not in ('a','e','
 =============================================================================================================================
 Q16.Ans:- select distinct city from station where left(city,1) not in ('a','e','i','o','u') or right(city,1) not in ('a','e','i','o','u');
 ===========================================================================================================================
-Q17.Ans:- 
+Q17.Ans:- (select p.product_id, p.product_name
+from product p
+inner join sales s on p.product_id = s.product_id 
+where s.sale_date >= '2019-01-01' and s.sale_date <= '2019-03-31')
+EXCEPT
+(select p.product_id, p.product_name
+from product p
+inner join sales s on p.product_id = s.product_id 
+where s.sale_date < '2019-01-01' or s.sale_date > '2019-03-31');
+===========================================================================================================================
 
 
 
