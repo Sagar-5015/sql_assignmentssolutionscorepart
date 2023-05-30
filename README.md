@@ -22,14 +22,19 @@ Q10.Ans:- (select City, length(City) as length from station order by length(City
 union
 (select City, length(City) as length from station order by length(City) desc, City desc limit 1);
 ============================================================================================================================
-Q11.Ans:- select distinct(City) from station where city like 'a%' or city like 'e%' or city like 'i%' or city like 'o%' or city like 'u%';
+Q11.Ans:- select distinct city from station where left(city,1) in ('a','e','i','o','u');
 ============================================================================================================================
-Q12.Ans:- select distinct(City) from station where city like '%a' or city like '%e' or city like '%i' or city like '%o' or city like '%u';
+Q12.Ans:- select distinct city from station where right(city,1) in ('a','e','i','o','u');
+==============================================================================================================================
+Q13.Ans:- select distinct city from station where left(city,1) not in ('a','e','i','o','u');
+==============================================================================================================================
+Q14.Ans:- select distinct city from station where right(city,1) not in ('a','e','i','o','u');
 ============================================================================================================================
-Q13.Ans:- select distinct(City) from station where not city like 'a%' or 'e%' or 'i%' or 'o%' or 'u%';
+Q15.Ans:- select distinct city from station where left(city,1) not in ('a','e','i','o','u') or right(city,1) not in ('a','e','i','o','u');
+=============================================================================================================================
+Q16.Ans:- select distinct city from station where left(city,1) not in ('a','e','i','o','u') or right(city,1) not in ('a','e','i','o','u');
 ===========================================================================================================================
-Q14.Ans:- select distinct(City) from station where not city like '%a' or '%e' or '%i' or '%o' or '%u';
-===========================================================================================================================
+Q17.Ans:- 
 
 
 
