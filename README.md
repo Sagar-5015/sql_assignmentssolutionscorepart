@@ -44,7 +44,9 @@ from product p
 inner join sales s on p.product_id = s.product_id 
 where s.sale_date < '2019-01-01' or s.sale_date > '2019-03-31');
 ===========================================================================================================================
-
+Q18.Ans:- select distinct(author_id) as id from views where author_id = viewer_id order by author_id asc;
+===========================================================================================================================
+Q19.Ans:- 
 
 
 
