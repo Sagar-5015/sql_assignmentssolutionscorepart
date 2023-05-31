@@ -48,7 +48,14 @@ Q18.Ans:- select distinct(author_id) as id from views where author_id = viewer_i
 ===========================================================================================================================
 Q19.Ans:- select round((select count(*) from delivery where order_date = customer_pref_delivery_date)/count(*)*100,2) as immediate_delivery_percentage from delivery;
 ======================================================================================================================================================================
-Q20.Ans:- 
+Q20.Ans:- SELECT ad_id,
+	round(
+		(SUM(action='Clicked')/
+	    (SUM(action='Clicked') + SUM(action='Viewed'))
+		)*100, 2) as CTR 
+FROM Ads GROUP BY ad_id
+ORDER BY CTR DESC, ad_id ASC;
+===============================================================================================================================================================
 
 
 
