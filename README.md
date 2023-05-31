@@ -46,7 +46,9 @@ where s.sale_date < '2019-01-01' or s.sale_date > '2019-03-31');
 ===========================================================================================================================
 Q18.Ans:- select distinct(author_id) as id from views where author_id = viewer_id order by author_id asc;
 ===========================================================================================================================
-Q19.Ans:- 
+Q19.Ans:- select round((select count(*) from delivery where order_date = customer_pref_delivery_date)/count(*)*100,2) as immediate_delivery_percentage from delivery;
+======================================================================================================================================================================
+Q20.Ans:- 
 
 
 
