@@ -56,7 +56,17 @@ Q20.Ans:- SELECT ad_id,
 FROM Ads GROUP BY ad_id
 ORDER BY CTR DESC, ad_id ASC;
 ===============================================================================================================================================================
-
+Q21.Ans:- select employee_id, count(team_id) over(partition by team_id) as team_size from employee order by employee_id;
+================================================================================================================================================================
+Q22.Ans:- select c.country_name, case
+when avg(weather_state) <= 15 then 'Cold'
+when avg(weather_state) >= 25 then 'Hot'
+else 'Warm' end as weather_state
+from countries c
+left join weather w on c.country_id = w.country_id 
+where month(day) = 11 group by c.country_name;
+================================================================================================================================================================
+Q23.Ans:- 
 
 
 
