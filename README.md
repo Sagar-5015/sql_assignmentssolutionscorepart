@@ -74,7 +74,12 @@ where u.purchase_date >= p.start_date and u.purchase_date <= p.end_date
 group by p.product_id
 order by p.product_id;
 =================================================================================================================================================================
-
+Q24.Ans:- select player_id, event_date as first_login from
+                                                (select player_id, event_date, row_number() over(partition by player_id order by event_date) as num from activity)t where t.num=1;
+====================================================================================================================================================================================
+Q25.Ans:- select player_id, event_date as first_login from
+          (select player_id, event_date, row_number() over(partition by player_id order by event_date) as num from activity)t where t.num = 1;
+=====================================================================================================================================================================================
 
 
 
